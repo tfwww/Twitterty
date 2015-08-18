@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720877755369818A61DFD6AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8DF3D58B162107A2848B3A /* libPods.a */; };
 		A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CB71B79F20E00EE41D9 /* AppDelegate.m */; };
 		A59C7CBA1B79F20E00EE41D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CB91B79F20E00EE41D9 /* main.m */; };
 		A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */; };
 		A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */; };
 		A59C7CCB1B79F20F00EE41D9 /* TwittertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CCA1B79F20F00EE41D9 /* TwittertyTests.m */; };
+		A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CD81B79F51F00EE41D9 /* Sidebar.m */; };
+		A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F591B801E9D001F701B /* tag@2x.png */; };
+		A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */; };
+		A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */; };
+		A5E63F601B801EC1001F701B /* star-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5F1B801EC1001F701B /* star-pushed@2x.png */; };
+		A5E78B6B1B7CB26D00692252 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E78B681B7CB26D00692252 /* tag.png */; };
+		A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E78B691B7CB26D00692252 /* watch-pushed.png */; };
+		A5E78B6D1B7CB26D00692252 /* trash-pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E78B6A1B7CB26D00692252 /* trash-pushed.png */; };
+		A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA39331B7AFE3A00279D1C /* ItemCell.m */; };
+		A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EA39361B7B36C200279D1C /* star-pushed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BE8C1FEA893F273C05FB4FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		40938E9659B5AFC841330E82 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4C8DF3D58B162107A2848B3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C7CB11B79F20E00EE41D9 /* Twitterty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitterty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C7CB51B79F20E00EE41D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59C7CB61B79F20E00EE41D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,6 +49,18 @@
 		A59C7CC41B79F20F00EE41D9 /* TwittertyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwittertyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C7CC91B79F20F00EE41D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59C7CCA1B79F20F00EE41D9 /* TwittertyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwittertyTests.m; sourceTree = "<group>"; };
+		A59C7CD71B79F51F00EE41D9 /* Sidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sidebar.h; sourceTree = "<group>"; };
+		A59C7CD81B79F51F00EE41D9 /* Sidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sidebar.m; sourceTree = "<group>"; };
+		A5E63F591B801E9D001F701B /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
+		A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch-pushed@2x.png"; sourceTree = "<group>"; };
+		A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-pushed@2x.png"; sourceTree = "<group>"; };
+		A5E63F5F1B801EC1001F701B /* star-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-pushed@2x.png"; sourceTree = "<group>"; };
+		A5E78B681B7CB26D00692252 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		A5E78B691B7CB26D00692252 /* watch-pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch-pushed.png"; sourceTree = "<group>"; };
+		A5E78B6A1B7CB26D00692252 /* trash-pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-pushed.png"; sourceTree = "<group>"; };
+		A5EA39321B7AFE3A00279D1C /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		A5EA39331B7AFE3A00279D1C /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		A5EA39361B7B36C200279D1C /* star-pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-pushed.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720877755369818A61DFD6AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +82,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D1299FD779A9187289466ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40938E9659B5AFC841330E82 /* Pods.debug.xcconfig */,
+				1BE8C1FEA893F273C05FB4FA /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5379AE01B8318E50039862B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59C7CD71B79F51F00EE41D9 /* Sidebar.h */,
+				A59C7CD81B79F51F00EE41D9 /* Sidebar.m */,
+				A5EA39321B7AFE3A00279D1C /* ItemCell.h */,
+				A5EA39331B7AFE3A00279D1C /* ItemCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		A59C7CA81B79F20E00EE41D9 = {
 			isa = PBXGroup;
 			children = (
 				A59C7CB31B79F20E00EE41D9 /* Twitterty */,
 				A59C7CC71B79F20F00EE41D9 /* TwittertyTests */,
 				A59C7CB21B79F20E00EE41D9 /* Products */,
+				9D1299FD779A9187289466ED /* Pods */,
+				EB37D00EBA64C03F989A1EEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,10 +125,12 @@
 		A59C7CB31B79F20E00EE41D9 /* Twitterty */ = {
 			isa = PBXGroup;
 			children = (
+				A5379AE01B8318E50039862B /* View */,
 				A59C7CB61B79F20E00EE41D9 /* AppDelegate.h */,
 				A59C7CB71B79F20E00EE41D9 /* AppDelegate.m */,
 				A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */,
 				A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */,
+				A5EA39391B7B36E800279D1C /* Image */,
 				A59C7CB41B79F20E00EE41D9 /* Supporting Files */,
 			);
 			path = Twitterty;
@@ -111,6 +162,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A5EA39391B7B36E800279D1C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A5E78B681B7CB26D00692252 /* tag.png */,
+				A5E63F591B801E9D001F701B /* tag@2x.png */,
+				A5E78B691B7CB26D00692252 /* watch-pushed.png */,
+				A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */,
+				A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */,
+				A5E78B6A1B7CB26D00692252 /* trash-pushed.png */,
+				A5EA39361B7B36C200279D1C /* star-pushed.png */,
+				A5E63F5F1B801EC1001F701B /* star-pushed@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		EB37D00EBA64C03F989A1EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C8DF3D58B162107A2848B3A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A59C7CCE1B79F20F00EE41D9 /* Build configuration list for PBXNativeTarget "Twitterty" */;
 			buildPhases = (
+				9D3F0078CB64FB13D674132F /* Check Pods Manifest.lock */,
 				A59C7CAD1B79F20E00EE41D9 /* Sources */,
 				A59C7CAE1B79F20E00EE41D9 /* Frameworks */,
 				A59C7CAF1B79F20E00EE41D9 /* Resources */,
+				B801AA1D03BAF833667C9913 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,8 +267,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */,
+				A5E78B6B1B7CB26D00692252 /* tag.png in Resources */,
+				A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */,
 				A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */,
+				A5E78B6D1B7CB26D00692252 /* trash-pushed.png in Resources */,
+				A5E63F601B801EC1001F701B /* star-pushed@2x.png in Resources */,
+				A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */,
+				A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */,
 				A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */,
+				A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,13 +289,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9D3F0078CB64FB13D674132F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B801AA1D03BAF833667C9913 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A59C7CAD1B79F20E00EE41D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */,
 				A59C7CBA1B79F20E00EE41D9 /* main.m in Sources */,
 				A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */,
+				A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +445,7 @@
 		};
 		A59C7CCF1B79F20F00EE41D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40938E9659B5AFC841330E82 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -337,6 +457,7 @@
 		};
 		A59C7CD01B79F20F00EE41D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BE8C1FEA893F273C05FB4FA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -401,6 +522,7 @@
 				A59C7CD01B79F20F00EE41D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59C7CD11B79F20F00EE41D9 /* Build configuration list for PBXNativeTarget "TwittertyTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +531,7 @@
 				A59C7CD31B79F20F00EE41D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

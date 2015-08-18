@@ -7,8 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Sidebar.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    
+    IBOutlet Sidebar *theBar;
+    IBOutlet NSTextField *label;
+}
 
 
 @end
