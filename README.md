@@ -8,8 +8,8 @@ Studied from the following source:
 
 1. erndev/EDSidebar
 
-https://github.com/erndev/EDSidebar.git
+  https://github.com/erndev/EDSidebar.git
 
 2. iluuu1994/ITSidebar
 
-https://github.com/iluuu1994/ITSidebar.git
+  https://github.com/iluuu1994/ITSidebar.git
