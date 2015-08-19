@@ -5,6 +5,7 @@ Learning how to develop Twitter client on Cocoa.
 The interface is done.
 
 Studied from the following source:
+
 1. erndev/EDSidebar
 https://github.com/erndev/EDSidebar.git
 
