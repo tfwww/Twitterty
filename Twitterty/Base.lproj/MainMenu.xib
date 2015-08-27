@@ -671,18 +671,18 @@
         <window title="Twitterty" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="396" height="483"/>
+            <rect key="contentRect" x="335" y="390" width="418" height="596"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="-2" width="396" height="483"/>
+                <rect key="frame" x="0.0" y="1" width="418" height="596"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView id="hqP-BJ-ZSi" customClass="Sidebar">
-                        <rect key="frame" x="0.0" y="0.0" width="67" height="483"/>
+                        <rect key="frame" x="0.0" y="0.0" width="67" height="596"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                     </customView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="I7f-s9-nzA">
-                        <rect key="frame" x="134" y="215" width="129" height="53"/>
+                        <rect key="frame" x="134" y="328" width="129" height="53"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Test" id="9J9-M8-LNK">
                             <font key="font" metaFont="system"/>
@@ -692,7 +692,7 @@
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="291" y="408.5"/>
+            <point key="canvasLocation" x="302" y="465"/>
         </window>
     </objects>
 </document>

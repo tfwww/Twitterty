@@ -12,9 +12,9 @@
 
 @implementation Sidebar
 
-- (id)initWithCoder:(NSCoder *)coder {
+- (id)initWithCoder:(NSCoder *)code {
     
-    self = [super initWithCoder:coder];
+    self = [super initWithCoder:code];
     if (self) {
         
         _itemsMatrix = [[NSMatrix alloc] initWithFrame:[self frame]
@@ -51,6 +51,7 @@
         [[self itemsMatrix] addSubview:selectionImageView positioned:NSWindowAbove relativeTo:nil];
         [self moveSelectionImage];
     }
+    
     [selectionImageView setImage:image];
     [self moveSelectionImage];
 }

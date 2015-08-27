@@ -38,6 +38,7 @@
     } else {
         cellImage = [self alternateImage];
     }
+    
     [self drawImage:cellImage withFrame:cellFrame inView:controlView];
 }
 

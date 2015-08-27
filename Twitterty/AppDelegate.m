@@ -7,20 +7,24 @@
 //
 
 #import "AppDelegate.h"
+#import "STTwitter.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+
+    [self wakeUpHomeTimelineView];
 }
 
 - (void)awakeFromNib {
     
+    // Add the cells with image
     [theBar addButtonCellWithImage:[NSImage imageNamed:@"star-pushed"]
                     alternateImage:[NSImage imageNamed:@"star-pushed"]
                             target:self
@@ -47,6 +51,7 @@
     // Insert code here to tear down your application
 }
 
+// triangle selection
 - (NSImage *)buildTriangleSelection {
     
     NSInteger imageWidth = 12, imageHeight = 22;
@@ -70,11 +75,15 @@
     return destImage;
 }
 
+#pragma mark - Mouse Clicked Action
+
 - (IBAction)starClicked:(id)sender {
     
-    [label setStringValue:@"STAR"];
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
+    
+    //[self wakeUpHomeTimelineView];
+    
 }
 
 - (IBAction)tagClicked:(id)sender {
@@ -96,6 +105,26 @@
     [label setStringValue:@"TRASH"];
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
+}
+
+#pragma mark - Wake Up the Nibs
+
+- (void)wakeUpHomeTimelineView {
+    
+    homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
+    
+    // Draw the HomeTimelineView frame
+    NSRect tableViewRect;
+    NSRect windowRect = [[self window] frame];
+    NSRect sideBarRect = [theBar frame];
+    
+    tableViewRect.origin.x = sideBarRect.size.width;
+    tableViewRect.origin.y = 0.0;
+    tableViewRect.size.width = NSWidth(windowRect) - sideBarRect.size.width;
+    tableViewRect.size.height = NSHeight(windowRect);
+    
+    [[homeTimelineVC view] setFrame:tableViewRect];
+    [[[self window] contentView] addSubview:[homeTimelineVC view]];
 }
 
 @end
