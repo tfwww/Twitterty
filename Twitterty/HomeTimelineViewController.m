@@ -9,6 +9,11 @@
 #import "HomeTimelineViewController.h"
 #import "Sidebar.h"
 
+NSString *const kConsumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
+NSString *const kConsuemrSecret = @"KCa6WUcv8DCkB6mfMK3EBmd6aBX5DpTNajgneYgjVbJEw4bJYu";
+NSString *const kOauthToken = @"105745339-TujlsXUir2p8B8gEVNSgOev8cS3kHGEHQ4Sa1AR1";
+NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c";
+
 @interface HomeTimelineViewController ()
 
 @end
@@ -27,16 +32,11 @@
 - (void)getHomeTimeline {
     
     // Get authentication from twitter
-    NSString *consumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
-    NSString *consuemrSecret = @"KCa6WUcv8DCkB6mfMK3EBmd6aBX5DpTNajgneYgjVbJEw4bJYu";
-    NSString *oauthToken = @"105745339-TujlsXUir2p8B8gEVNSgOev8cS3kHGEHQ4Sa1AR1";
-    NSString *oauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c";
-    // NSString *screenName = @"MyEvil_";
+    twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+                                            consumerSecret:kConsuemrSecret
+                                                oauthToken:kOauthToken
+                                          oauthTokenSecret:kOauthTokenSecret];
     
-    twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:consumerKey
-                                            consumerSecret:consuemrSecret
-                                                oauthToken:oauthToken
-                                          oauthTokenSecret:oauthTokenSecret];
     [twitter verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {
         
         NSLog(@"Success with username: %@ and userID: %@", username, userID);
@@ -63,10 +63,11 @@
         
         // Get Home timeline
         [twitter getHomeTimelineSinceID:nil
-                                  count:50
+                                  count:10
                            successBlock:^(NSArray *statuses) {
-                               NSLog(@"Statuses: %lu", (unsigned long)[statuses count]);
+                               //NSLog(@"Statuses:%@", statuses);
                                tweetData = statuses;
+                               
                                [[self tweetsTable] reloadData];
                            }
                              errorBlock:^(NSError *error) {
@@ -77,6 +78,32 @@
         NSLog(@"Failed with error: %@", [error localizedDescription]);
     }];
 }
+
+//- (void)getProfileImage {
+
+//    twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+//                                            consumerSecret:kConsuemrSecret
+//                                                oauthToken:kOauthToken
+//                                          oauthTokenSecret:kOauthTokenSecret];
+//    [twitter verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {
+//        
+//        NSLog(@"Success with username: %@ and userID: %@", username, userID);
+//        
+//        [twitter getUsersShowForUserID:nil orScreenName:@"barackobama" includeEntities:nil successBlock:^(NSDictionary *user) {
+//            
+//            NSString *profileImageURLString = [user valueForKey:@"profile_image_url"];
+//            NSURL *url = [NSURL URLWithString:profileImageURLString];
+//            profileImage = [[NSImage alloc] initWithContentsOfURL:url];
+//            NSLog(@"profileImage: %@", profileImage);
+//            
+//        } errorBlock:^(NSError *error) {
+//            NSLog(@"Failed with error: %@", [error localizedDescription]);
+//        }];
+//        
+//    } errorBlock:^(NSError *error) {
+//        NSLog(@"Failed with error: %@", [error localizedDescription]);
+//    }];
+//}
 
 //- (void)drawBorderWithColor:(NSColor *)color {
 //    
@@ -99,7 +126,10 @@
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
     
-    return [[tweetData objectAtIndex:rowIndex] valueForKey:@"text"];
+    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+    [[cellView textField] setStringValue:[[tweetData objectAtIndex:rowIndex] valueForKey:@"text"]];
+    
+    return cellView;
 }
 
 #pragma mark - Table View Delegate
@@ -108,17 +138,38 @@
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     
-    NSTextField *result = [tableView makeViewWithIdentifier:@"tweetItem" owner:self];
+//    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+//    [[cellView textField] setStringValue:[tweetData objectAtIndex:row]];
+//    [cellView.imageView setImage:profileImage];
     
-    if (result == nil) {
+    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+    
+//    if (result == nil) {
+//        
+//        result = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
+//        [result setIdentifier:@"tweetItem"];
+//    }
+    
+//    [cellView setObjectValue:[tweetData objectAtIndex:row]];
+    
+    if (cellView == nil) {
         
-        result = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
-        [result setIdentifier:@"tweetItem"];
+        cellView = [[NSTableCellView alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
+        [cellView setIdentifier:@"tweetItem"];
     }
+    [[cellView textField] setStringValue:[[tweetData objectAtIndex:row] valueForKey:@"text"]];
+    [cellView.imageView setImage:[self getProfleImageInRow:row]];
+    return cellView;
+}
+
+- (NSImage *)getProfleImageInRow:(NSInteger)row {
     
-    [result setObjectValue:[tweetData objectAtIndex:row]];
-    return result;
+    NSDictionary *tweetDictionary = [tweetData objectAtIndex:row];
+    NSString *imageURLString = [tweetDictionary valueForKeyPath:@"user.profile_image_url"];
+    NSURL *imageURL = [[NSURL alloc] initWithString:imageURLString];
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:imageURL];
     
+    return image;
 }
 
 @end

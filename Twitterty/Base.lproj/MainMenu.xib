@@ -671,10 +671,10 @@
         <window title="Twitterty" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="418" height="596"/>
+            <rect key="contentRect" x="335" y="390" width="435" height="596"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="1" width="418" height="596"/>
+                <rect key="frame" x="0.0" y="0.0" width="435" height="596"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView id="hqP-BJ-ZSi" customClass="Sidebar">
@@ -692,7 +692,7 @@
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="302" y="465"/>
+            <point key="canvasLocation" x="310.5" y="465"/>
         </window>
     </objects>
 </document>
