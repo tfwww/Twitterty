@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "STTwitter.h"
+#import "HomeTweetCellView.h"
 
 extern NSString *const kConsumerKey;
 extern NSString *const kConsuemrSecret;
@@ -18,6 +19,7 @@ extern NSString *const kOauthTokenSecret;
     
     STTwitterAPI *twitter;
     NSArray *tweetData;
+    HomeTweetCellView *tweetCellView;
 }
 
 @property (weak) IBOutlet NSTableView *tweetsTable;

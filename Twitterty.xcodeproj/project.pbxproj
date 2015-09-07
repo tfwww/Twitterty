@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50DF4F11B95A72100F954B6 /* HomeTweetButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */; };
+		A50DF4F41B95AB7600F954B6 /* HomeTweetButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */; };
 		A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */; };
 		A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */; };
 		A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CB71B79F20E00EE41D9 /* AppDelegate.m */; };
@@ -15,6 +17,7 @@
 		A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */; };
 		A59C7CCB1B79F20F00EE41D9 /* TwittertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CCA1B79F20F00EE41D9 /* TwittertyTests.m */; };
 		A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CD81B79F51F00EE41D9 /* Sidebar.m */; };
+		A5E41A361B9C1DD9002B8931 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E41A351B9C1DD9002B8931 /* reply.png */; };
 		A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F591B801E9D001F701B /* tag@2x.png */; };
 		A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */; };
 		A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */; };
@@ -41,6 +44,7 @@
 		A5E7A3D71B8B189200CB8B7D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E7A3D61B8B189200CB8B7D /* Security.framework */; };
 		A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA39331B7AFE3A00279D1C /* ItemCell.m */; };
 		A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EA39361B7B36C200279D1C /* star-pushed.png */; };
+		A5EBE5521B954F1700D4A66E /* HomeTweetCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50DF4EF1B95A72100F954B6 /* HomeTweetButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetButtonsView.h; sourceTree = "<group>"; };
+		A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetButtonsView.m; sourceTree = "<group>"; };
+		A50DF4F21B95AB7600F954B6 /* HomeTweetButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetButtonCell.h; sourceTree = "<group>"; };
+		A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetButtonCell.m; sourceTree = "<group>"; };
 		A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTimelineViewController.h; sourceTree = "<group>"; };
 		A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTimelineViewController.m; sourceTree = "<group>"; };
 		A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTimelineViewController.xib; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 		A59C7CD71B79F51F00EE41D9 /* Sidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sidebar.h; sourceTree = "<group>"; };
 		A59C7CD81B79F51F00EE41D9 /* Sidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sidebar.m; sourceTree = "<group>"; };
 		A5B2AF541B897D7700A341C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A5E41A351B9C1DD9002B8931 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 		A5E63F591B801E9D001F701B /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
 		A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch-pushed@2x.png"; sourceTree = "<group>"; };
 		A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-pushed@2x.png"; sourceTree = "<group>"; };
@@ -115,6 +124,8 @@
 		A5EA39331B7AFE3A00279D1C /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		A5EA39361B7B36C200279D1C /* star-pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-pushed.png"; sourceTree = "<group>"; };
 		A5EA73371B8B0AAB0096E29C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A5EBE5501B954F1700D4A66E /* HomeTweetCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetCellView.h; sourceTree = "<group>"; };
+		A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +149,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A5379AE01B8318E50039862B /* View */ = {
+		A5379AE01B8318E50039862B /* SidebarView */ = {
 			isa = PBXGroup;
 			children = (
 				A59C7CD71B79F51F00EE41D9 /* Sidebar.h */,
@@ -146,7 +157,7 @@
 				A5EA39321B7AFE3A00279D1C /* ItemCell.h */,
 				A5EA39331B7AFE3A00279D1C /* ItemCell.m */,
 			);
-			name = View;
+			name = SidebarView;
 			sourceTree = "<group>";
 		};
 		A59C7CA81B79F20E00EE41D9 = {
@@ -176,11 +187,18 @@
 				A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */,
 				A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */,
 				A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */,
+				A5EBE5501B954F1700D4A66E /* HomeTweetCellView.h */,
+				A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */,
+				A50DF4EF1B95A72100F954B6 /* HomeTweetButtonsView.h */,
+				A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */,
+				A50DF4F21B95AB7600F954B6 /* HomeTweetButtonCell.h */,
+				A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */,
 				A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */,
 				A5E7A3A21B8B17DA00CB8B7D /* STTwitter */,
-				A5379AE01B8318E50039862B /* View */,
+				A5379AE01B8318E50039862B /* SidebarView */,
 				A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */,
-				A5EA39391B7B36E800279D1C /* Image */,
+				A5E9DCC21B96A3F60081E69C /* ButtonsViewImage */,
+				A5EA39391B7B36E800279D1C /* SidebarViewImage */,
 				A59C7CB41B79F20E00EE41D9 /* Supporting Files */,
 			);
 			path = Twitterty;
@@ -258,7 +276,15 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		A5EA39391B7B36E800279D1C /* Image */ = {
+		A5E9DCC21B96A3F60081E69C /* ButtonsViewImage */ = {
+			isa = PBXGroup;
+			children = (
+				A5E41A351B9C1DD9002B8931 /* reply.png */,
+			);
+			name = ButtonsViewImage;
+			sourceTree = "<group>";
+		};
+		A5EA39391B7B36E800279D1C /* SidebarViewImage */ = {
 			isa = PBXGroup;
 			children = (
 				A5E78B681B7CB26D00692252 /* tag.png */,
@@ -270,7 +296,7 @@
 				A5EA39361B7B36C200279D1C /* star-pushed.png */,
 				A5E63F5F1B801EC1001F701B /* star-pushed@2x.png */,
 			);
-			name = Image;
+			name = SidebarViewImage;
 			sourceTree = "<group>";
 		};
 		EB37D00EBA64C03F989A1EEB /* Frameworks */ = {
@@ -369,6 +395,7 @@
 				A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */,
 				A5E78B6B1B7CB26D00692252 /* tag.png in Resources */,
 				A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */,
+				A5E41A361B9C1DD9002B8931 /* reply.png in Resources */,
 				A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */,
 				A5E78B6D1B7CB26D00692252 /* trash-pushed.png in Resources */,
 				A5E63F601B801EC1001F701B /* star-pushed@2x.png in Resources */,
@@ -394,6 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */,
+				A50DF4F11B95A72100F954B6 /* HomeTweetButtonsView.m in Sources */,
+				A50DF4F41B95AB7600F954B6 /* HomeTweetButtonCell.m in Sources */,
 				A5E7A3CB1B8B17DA00CB8B7D /* STTwitterOS.m in Sources */,
 				A5E7A3C51B8B17DA00CB8B7D /* NSString+STTwitter.m in Sources */,
 				A5E7A3C71B8B17DA00CB8B7D /* STTwitterAPI.m in Sources */,
@@ -412,6 +441,7 @@
 				A5E7A3CF1B8B17DA00CB8B7D /* JSONSyntaxHighlight.m in Sources */,
 				A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */,
 				A5E7A3CD1B8B17DA00CB8B7D /* STTwitterStreamParser.m in Sources */,
+				A5EBE5521B954F1700D4A66E /* HomeTweetCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "HomeTimelineViewController.h"
 #import "Sidebar.h"
+#import "HomeTweetCellView.h"
 
 NSString *const kConsumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
 NSString *const kConsuemrSecret = @"KCa6WUcv8DCkB6mfMK3EBmd6aBX5DpTNajgneYgjVbJEw4bJYu";
@@ -63,7 +64,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
         
         // Get Home timeline
         [twitter getHomeTimelineSinceID:nil
-                                  count:10
+                                  count:2
                            successBlock:^(NSArray *statuses) {
                                //NSLog(@"Statuses:%@", statuses);
                                tweetData = statuses;
@@ -126,7 +127,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
     
-    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+    HomeTweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
     [[cellView textField] setStringValue:[[tweetData objectAtIndex:rowIndex] valueForKey:@"text"]];
     
     return cellView;
@@ -138,27 +139,17 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     
-//    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
-//    [[cellView textField] setStringValue:[tweetData objectAtIndex:row]];
-//    [cellView.imageView setImage:profileImage];
-    
-    NSTableCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
-    
-//    if (result == nil) {
-//        
-//        result = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
-//        [result setIdentifier:@"tweetItem"];
-//    }
-    
-//    [cellView setObjectValue:[tweetData objectAtIndex:row]];
+    HomeTweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
     
     if (cellView == nil) {
         
-        cellView = [[NSTableCellView alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
+        cellView = [[HomeTweetCellView alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
         [cellView setIdentifier:@"tweetItem"];
     }
     [[cellView textField] setStringValue:[[tweetData objectAtIndex:row] valueForKey:@"text"]];
     [cellView.imageView setImage:[self getProfleImageInRow:row]];
+    [[cellView screenNameLabel] setStringValue:[[tweetData objectAtIndex:row] valueForKeyPath:@"user.screen_name"]];
+    
     return cellView;
 }
 
