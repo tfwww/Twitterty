@@ -39,15 +39,15 @@
     [self addButtonCellWithImage:[NSImage imageNamed:@"reply.png"]
                                   alternateImage:[NSImage imageNamed:@"reply.png"]
                                           target:self
-                                          action:@selector(replyButtonClicked:)];
+                                          action:@selector(replyButtonClicked)];
     [self addButtonCellWithImage:[NSImage imageNamed:@"reply.png"]
                   alternateImage:[NSImage imageNamed:@"reply.png"]
                           target:self
-                          action:@selector(replyButtonClicked:)];
+                          action:@selector(replyButtonClicked)];
     [self addButtonCellWithImage:[NSImage imageNamed:@"reply.png"]
                   alternateImage:[NSImage imageNamed:@"reply.png"]
                           target:self
-                          action:@selector(replyButtonClicked:)];
+                          action:@selector(replyButtonClicked)];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -60,10 +60,6 @@
 
 }
 
-- (void)resizeMatrix {
-    
-    
-}
 
 + (NSSize)defaultCellSize {
     
@@ -95,7 +91,8 @@
 
 - (void)replyButtonClicked {
     
-    
+    replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+    [replyController showWindow:self];
 }
 
 @end

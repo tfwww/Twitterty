@@ -7,10 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ReplyWindowController.h"
+
 
 @interface HomeTweetButtonsView : NSView {
     
     NSMatrix *buttonsMatrix;
+    ReplyWindowController *replyController;
 }
 
 - (void)addButtonCellWithImage:(NSImage *)image alternateImage:(NSImage *)altImage target:(id)target action:(SEL)action;

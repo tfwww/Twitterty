@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EA10AF36-B807-43E4-8589-ECABF052FD68</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Twitterty</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6EA1E4913C984F07BA5CE336BF593B54D2934E3D</key>
 		<string>https://github.com/wmzhong/Twitterty.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Twitterty.xcodeproj/project.xcworkspace</string>
+	<string>Twitterty.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6EA1E4913C984F07BA5CE336BF593B54D2934E3D</key>
