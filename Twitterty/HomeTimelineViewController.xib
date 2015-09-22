@@ -16,14 +16,14 @@
             <rect key="frame" x="0.0" y="-1" width="365" height="514"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="114" horizontalPageScroll="10" verticalLineScroll="114" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="JHR-1x-adF">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="167" horizontalPageScroll="10" verticalLineScroll="167" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="JHR-1x-adF">
                     <rect key="frame" x="0.0" y="0.0" width="365" height="514"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="SpR-mg-j7N">
                         <rect key="frame" x="1" y="17" width="238" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="112" rowSizeStyle="automatic" headerView="RtY-8J-HPe" viewBased="YES" id="g4Z-uq-8zb">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="165" rowSizeStyle="automatic" headerView="RtY-8J-HPe" viewBased="YES" id="g4Z-uq-8zb">
                                 <rect key="frame" x="0.0" y="0.0" width="366" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -44,16 +44,16 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="tweetItem" id="2TK-Mm-wHZ" customClass="HomeTweetCellView">
-                                                <rect key="frame" x="1" y="1" width="363" height="112"/>
+                                                <rect key="frame" x="1" y="1" width="363" height="165"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ORl-0h-org">
-                                                        <rect key="frame" x="3" y="60" width="39" height="35"/>
+                                                        <rect key="frame" x="3" y="113" width="39" height="35"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="R9B-iY-rqE"/>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" setsMaxLayoutWidthAtFirstLayout="YES" id="OV2-O0-hir">
-                                                        <rect key="frame" x="48" y="38" width="338" height="44"/>
+                                                        <rect key="frame" x="48" y="91" width="338" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" title="Table View Cell" id="7ky-01-UDx">
                                                             <font key="font" metaFont="system"/>
@@ -62,7 +62,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="t4A-Ix-oAW">
-                                                        <rect key="frame" x="48" y="90" width="299" height="17"/>
+                                                        <rect key="frame" x="48" y="143" width="299" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="U0N-Xq-T3k">
                                                             <font key="font" metaFont="system"/>
@@ -70,14 +70,21 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <customView id="PIj-DA-4In" customClass="HomeTweetButtonsView">
-                                                        <rect key="frame" x="0.0" y="3" width="363" height="37"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    </customView>
+                                                    <button verticalHuggingPriority="750" id="5yi-S0-j3b">
+                                                        <rect key="frame" x="276" y="55" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BvD-un-CXq">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="replyButtonClicked:" target="-2" id="AX8-AS-PjA"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <connections>
-                                                    <outlet property="buttonsView" destination="PIj-DA-4In" id="B0l-f5-iz3"/>
                                                     <outlet property="imageView" destination="ORl-0h-org" id="run-M7-1Ii"/>
+                                                    <outlet property="replyButton" destination="5yi-S0-j3b" id="Lky-bi-7Yg"/>
                                                     <outlet property="screenNameLabel" destination="t4A-Ix-oAW" id="15J-Wa-jGF"/>
                                                     <outlet property="textField" destination="OV2-O0-hir" id="13i-Fy-Xkp"/>
                                                 </connections>

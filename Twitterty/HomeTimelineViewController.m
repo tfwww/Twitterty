@@ -9,6 +9,7 @@
 #import "HomeTimelineViewController.h"
 #import "Sidebar.h"
 #import "HomeTweetCellView.h"
+#import "ReplyWindowController.h"
 
 NSString *const kConsumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
 NSString *const kConsuemrSecret = @"KCa6WUcv8DCkB6mfMK3EBmd6aBX5DpTNajgneYgjVbJEw4bJYu";
@@ -27,6 +28,8 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     // Do view setup here.
     
     [self getHomeTimeline];
+    
+//    [self changeReplyTextInRow];
     //[self drawBorderWithColor:[NSColor whiteColor]];
 }
 
@@ -64,12 +67,18 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
         
         // Get Home timeline
         [twitter getHomeTimelineSinceID:nil
-                                  count:2
+                                  count:10
                            successBlock:^(NSArray *statuses) {
-                               //NSLog(@"Statuses:%@", statuses);
+//                               NSLog(@"Statuses:%@", statuses);
                                tweetData = statuses;
                                
+//                               [replyController setValue:[tweetData[1] valueForKeyPath:@"user.screen_name"] forKey:@"replyText"];
+//                               replyController->tweetsData = [NSMutableArray arrayWithArray:statuses];
+//                               NSLog(@"reply: %@", [replyController valueForKey:@"replyText"]);
+                               
                                [[self tweetsTable] reloadData];
+                               [[self tweetsTable] selectedRow];
+                               
                            }
                              errorBlock:^(NSError *error) {
                                  NSLog(@"Failed with error: %@", [error localizedDescription]);
@@ -121,7 +130,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
 #pragma mark - Table View Data Source
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
-    
+
     return [tweetData count];
 }
 
@@ -147,6 +156,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
         [cellView setIdentifier:@"tweetItem"];
     }
     [[cellView textField] setStringValue:[[tweetData objectAtIndex:row] valueForKey:@"text"]];
+    
     [cellView.imageView setImage:[self getProfleImageInRow:row]];
     [[cellView screenNameLabel] setStringValue:[[tweetData objectAtIndex:row] valueForKeyPath:@"user.screen_name"]];
     
@@ -161,6 +171,53 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:imageURL];
     
     return image;
+}
+
+//- (IBAction)replyButtonClicked:(id)sender {
+//    
+//    replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+//    [replyController showWindow:self];
+//
+//    NSInteger selectedRow = [[self tweetsTable] selectedRow];
+//    NSString *screenName = [[tweetData objectAtIndex:selectedRow] valueForKeyPath:@"user.screen_name"];
+//    NSString *screenNameWithSymbol = [NSString stringWithFormat:@"@%@ ", screenName];
+//    [[replyController replyText] setStringValue:screenNameWithSymbol];
+//
+//    NSLog(@"screenName: %@", screenNameWithSymbol);
+//
+//    [[self tweetsTable] selectedRow];
+//    NSLog(@"selectedRow: %ld", [[self tweetsTable] selectedRow]);
+//
+//}
+
+//- (void)replyButton:(id)sender {
+//    
+////    [self getHomeTimeline];
+////    
+////    ReplyWindowController *replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+////    [replyController showWindow:self];
+//    
+////    HomeTweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+//    
+//    NSInteger selectedRow = [[self tweetsTable] selectedRow];
+//    [tweetData objectAtIndex:selectedRow];
+//    NSLog(@"RowForView: %ld", [[self tweetsTable] selectedRow]);
+//    
+//}
+
+- (IBAction)replyButtonClicked:(id)sender {
+    
+    replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+    [replyController showWindow:self];
+
+    NSInteger row = [[self tweetsTable] rowForView:sender];
+    NSDictionary *tweetInRow = [tweetData objectAtIndex:row];
+    [replyController setValue:tweetInRow forKey:@"_tweetToReply"];
+    
+    NSString *screenName = [[tweetData objectAtIndex:row] valueForKeyPath:@"user.screen_name"];
+    NSString *screenNameWithSymbol = [NSString stringWithFormat:@"@%@:", screenName];
+    
+    [[replyController replyName] setStringValue:screenNameWithSymbol];
 }
 
 @end

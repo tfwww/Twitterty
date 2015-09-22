@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "STTwitter.h"
 #import "HomeTweetCellView.h"
+#import "ReplyWindowController.h"
 
 extern NSString *const kConsumerKey;
 extern NSString *const kConsuemrSecret;
@@ -19,9 +20,16 @@ extern NSString *const kOauthTokenSecret;
     
     STTwitterAPI *twitter;
     NSArray *tweetData;
-    HomeTweetCellView *tweetCellView;
+    ReplyWindowController *replyController;
+//    HomeTweetCellView *tweetCellView;
 }
 
 @property (weak) IBOutlet NSTableView *tweetsTable;
+
+- (IBAction)replyButtonClicked:(id)sender;
+
+//- (void)replyButton:(id)sender;
+
+//- (void)changeReplyTextInRow;
 
 @end

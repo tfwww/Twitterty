@@ -7,6 +7,7 @@
 //
 
 #import "HomeTweetCellView.h"
+#import "HomeTimelineViewController.h"
 
 @implementation HomeTweetCellView
 
@@ -28,6 +29,29 @@
 //    }
 //
 //    return self;
+//}
+
+//- (IBAction)replyButtonClicked:(id)sender {
+//    
+//    replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+//    [replyController showWindow:self];
+//    
+//    HomeTimelineViewController *homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
+//    [[homeTimelineVC tweetsTable] selectedRow];
+//    NSLog(@"RowForView: %ld", [[homeTimelineVC tweetsTable] selectedRow]);
+//
+//}
+
+//- (IBAction)replyButtonClicked:(id)sender {
+//    
+//    nameWithSymbol = [[self delegate] replyButtonDidClicked:self];
+//    NSLog(@"nameWithSymbol: %@", nameWithSymbol);
+//    
+//    replyController = [[ReplyWindowController alloc] initWithWindowNibName:@"ReplyWindowController"];
+//    [replyController showWindow:self];
+//    
+//    [[replyController replyText] setStringValue:nameWithSymbol];
+//
 //}
 
 @end

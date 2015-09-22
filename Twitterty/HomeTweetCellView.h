@@ -7,11 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "HomeTweetButtonsView.h"
+#import "ReplyWindowController.h"
 
-@interface HomeTweetCellView : NSTableCellView
+@interface HomeTweetCellView : NSTableCellView {
+    
+    ReplyWindowController *replyController;
+    NSString *nameWithSymbol;
+}
 
+@property (weak) IBOutlet NSButton *replyButton;
 @property (weak) IBOutlet NSTextField *screenNameLabel;
-@property (weak) IBOutlet HomeTweetButtonsView *buttonsView;
 
 @end

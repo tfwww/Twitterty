@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A50DF4F11B95A72100F954B6 /* HomeTweetButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */; };
-		A50DF4F41B95AB7600F954B6 /* HomeTweetButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */; };
 		A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */; };
 		A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */; };
 		A57E72781B9EF29000D9ACC5 /* ReplyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */; };
@@ -60,10 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A50DF4EF1B95A72100F954B6 /* HomeTweetButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetButtonsView.h; sourceTree = "<group>"; };
-		A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetButtonsView.m; sourceTree = "<group>"; };
-		A50DF4F21B95AB7600F954B6 /* HomeTweetButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetButtonCell.h; sourceTree = "<group>"; };
-		A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetButtonCell.m; sourceTree = "<group>"; };
 		A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTimelineViewController.h; sourceTree = "<group>"; };
 		A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTimelineViewController.m; sourceTree = "<group>"; };
 		A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTimelineViewController.xib; sourceTree = "<group>"; };
@@ -194,10 +188,6 @@
 				A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */,
 				A5EBE5501B954F1700D4A66E /* HomeTweetCellView.h */,
 				A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */,
-				A50DF4EF1B95A72100F954B6 /* HomeTweetButtonsView.h */,
-				A50DF4F01B95A72100F954B6 /* HomeTweetButtonsView.m */,
-				A50DF4F21B95AB7600F954B6 /* HomeTweetButtonCell.h */,
-				A50DF4F31B95AB7600F954B6 /* HomeTweetButtonCell.m */,
 				A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */,
 				A57E72751B9EF29000D9ACC5 /* ReplyWindowController.h */,
 				A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */,
@@ -430,8 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */,
-				A50DF4F11B95A72100F954B6 /* HomeTweetButtonsView.m in Sources */,
-				A50DF4F41B95AB7600F954B6 /* HomeTweetButtonCell.m in Sources */,
 				A5E7A3CB1B8B17DA00CB8B7D /* STTwitterOS.m in Sources */,
 				A5E7A3C51B8B17DA00CB8B7D /* NSString+STTwitter.m in Sources */,
 				A5E7A3C71B8B17DA00CB8B7D /* STTwitterAPI.m in Sources */,
@@ -529,6 +517,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -565,6 +554,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};

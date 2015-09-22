@@ -8,6 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ReplyWindowController : NSWindowController
+@interface ReplyWindowController : NSWindowController {
+    
+    NSArray *tweetsData;
+    NSDictionary *_tweetToReply;
+    IBOutlet __weak NSTextField *replyText;
+    IBOutlet __weak NSTextField *replyName;
+    
+}
+
+@property (nonatomic) NSArray *tweetsData;
+
+@property (weak) IBOutlet NSTextField *replyName;
+@property (weak) IBOutlet NSTextField *replyText;
+//@property (weak) NSMutableArray *tweetsData;
+
+- (IBAction)cancelReplyText:(id)sender;
+- (IBAction)postReplyText:(id)sender;
 
 @end
