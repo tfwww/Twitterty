@@ -9,12 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import "Sidebar.h"
 #import "HomeTimelineViewController.h"
+#import "MentionViewController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     
     IBOutlet Sidebar *theBar;
     IBOutlet NSTextField *label;
+    
     HomeTimelineViewController *homeTimelineVC;
+    MentionViewController *mentionVC;
 }
 
 

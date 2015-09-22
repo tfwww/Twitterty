@@ -11,6 +11,8 @@
 		A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */; };
 		A57E72781B9EF29000D9ACC5 /* ReplyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */; };
 		A57E72791B9EF29000D9ACC5 /* ReplyWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E72771B9EF29000D9ACC5 /* ReplyWindowController.xib */; };
+		A58EE7861BB10ECB002F67C8 /* MentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A58EE7841BB10ECB002F67C8 /* MentionViewController.m */; };
+		A58EE7871BB10ECB002F67C8 /* MentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58EE7851BB10ECB002F67C8 /* MentionViewController.xib */; };
 		A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CB71B79F20E00EE41D9 /* AppDelegate.m */; };
 		A59C7CBA1B79F20E00EE41D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CB91B79F20E00EE41D9 /* main.m */; };
 		A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */; };
@@ -64,6 +66,9 @@
 		A57E72751B9EF29000D9ACC5 /* ReplyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyWindowController.h; sourceTree = "<group>"; };
 		A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyWindowController.m; sourceTree = "<group>"; };
 		A57E72771B9EF29000D9ACC5 /* ReplyWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyWindowController.xib; sourceTree = "<group>"; };
+		A58EE7831BB10ECB002F67C8 /* MentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MentionViewController.h; sourceTree = "<group>"; };
+		A58EE7841BB10ECB002F67C8 /* MentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MentionViewController.m; sourceTree = "<group>"; };
+		A58EE7851BB10ECB002F67C8 /* MentionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentionViewController.xib; sourceTree = "<group>"; };
 		A59C7CB11B79F20E00EE41D9 /* Twitterty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitterty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59C7CB51B79F20E00EE41D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59C7CB61B79F20E00EE41D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,6 +197,9 @@
 				A57E72751B9EF29000D9ACC5 /* ReplyWindowController.h */,
 				A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */,
 				A57E72771B9EF29000D9ACC5 /* ReplyWindowController.xib */,
+				A58EE7831BB10ECB002F67C8 /* MentionViewController.h */,
+				A58EE7841BB10ECB002F67C8 /* MentionViewController.m */,
+				A58EE7851BB10ECB002F67C8 /* MentionViewController.xib */,
 				A5E7A3A21B8B17DA00CB8B7D /* STTwitter */,
 				A5379AE01B8318E50039862B /* SidebarView */,
 				A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */,
@@ -392,6 +400,7 @@
 				A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */,
 				A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */,
 				A5E78B6B1B7CB26D00692252 /* tag.png in Resources */,
+				A58EE7871BB10ECB002F67C8 /* MentionViewController.xib in Resources */,
 				A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */,
 				A5E41A361B9C1DD9002B8931 /* reply.png in Resources */,
 				A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */,
@@ -434,6 +443,7 @@
 				A59C7CBA1B79F20E00EE41D9 /* main.m in Sources */,
 				A5E7A3D01B8B17DA00CB8B7D /* STHTTPRequest.m in Sources */,
 				A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */,
+				A58EE7861BB10ECB002F67C8 /* MentionViewController.m in Sources */,
 				A5E7A3C31B8B17DA00CB8B7D /* NSDateFormatter+STTwitter.m in Sources */,
 				A5E7A3CF1B8B17DA00CB8B7D /* JSONSyntaxHighlight.m in Sources */,
 				A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */,

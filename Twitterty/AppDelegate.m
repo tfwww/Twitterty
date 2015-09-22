@@ -19,7 +19,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    [self wakeUpHomeTimelineView];
+//    [self wakeUpHomeTimelineView];
+//    [self wakeUpMentionView];
+    
+    homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
+    mentionVC = [[MentionViewController alloc] initWithNibName:@"MentionViewController" bundle:nil];
+
+    [self displayViewController:homeTimelineVC];
+
 }
 
 - (void)awakeFromNib {
@@ -82,15 +89,18 @@
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
     
-    //[self wakeUpHomeTimelineView];
-    
+//    [self wakeUpHomeTimelineView];
+    [self displayViewController:homeTimelineVC];
+
 }
 
 - (IBAction)tagClicked:(id)sender {
     
-    [label setStringValue:@"TAG"];
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
+    
+//    [self wakeUpMentionView];
+    [self displayViewController:mentionVC];
 }
 
 - (IBAction)watchClicked:(id)sender {
@@ -107,13 +117,52 @@
     [theBar setSelectionImage:selImage];
 }
 
-#pragma mark - Wake Up the Nibs
+//#pragma mark - Wake Up the Nibs
+//
+//- (void)wakeUpHomeTimelineView {
+//    
+//    homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
+//    
+//    // Draw the HomeTimelineView frame
+//    NSRect tableViewRect;
+//    NSRect windowRect = [[self window] frame];
+//    NSRect sideBarRect = [theBar frame];
+//    
+//    tableViewRect.origin.x = sideBarRect.size.width;
+//    tableViewRect.origin.y = 0.0;
+//    tableViewRect.size.width = NSWidth(windowRect) - sideBarRect.size.width;
+//    tableViewRect.size.height = NSHeight(windowRect);
+//    
+//    [[homeTimelineVC view] setFrame:tableViewRect];
+//    [[[self window] contentView] addSubview:[homeTimelineVC view]];
+//}
 
-- (void)wakeUpHomeTimelineView {
+//- (void)wakeUpMentionView {
+//    
+//    mentionVC = [[MentionViewController alloc] initWithNibName:@"MentionViewController" bundle:nil];
+//    
+//    // Draw the wakeUpMentionView frame
+//    NSRect tableViewRect;
+//    NSRect windowRect = [[self window] frame];
+//    NSRect sideBarRect = [theBar frame];
+//    
+//    tableViewRect.origin.x = sideBarRect.size.width;
+//    tableViewRect.origin.y = 0.0;
+//    tableViewRect.size.width = NSWidth(windowRect) - sideBarRect.size.width;
+//    tableViewRect.size.height = NSHeight(windowRect);
+//    
+//    NSLog(@"tableViewRect width: %f", tableViewRect.size.width);
+//    NSLog(@"tableViewRect height:%f", tableViewRect.size.height);
+//    
+//    [[mentionVC view] setFrame:tableViewRect];
+//    [[[self window] contentView] addSubview:[mentionVC view]];
+//}
+
+#pragma mark - Change and Display View
+
+- (void)displayViewController:(NSViewController *)vc {
     
-    homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
-    
-    // Draw the HomeTimelineView frame
+    NSView *v = [vc view];
     NSRect tableViewRect;
     NSRect windowRect = [[self window] frame];
     NSRect sideBarRect = [theBar frame];
@@ -122,9 +171,9 @@
     tableViewRect.origin.y = 0.0;
     tableViewRect.size.width = NSWidth(windowRect) - sideBarRect.size.width;
     tableViewRect.size.height = NSHeight(windowRect);
+    [v setFrame:tableViewRect];
+    [[[self window] contentView] addSubview:v];
     
-    [[homeTimelineVC view] setFrame:tableViewRect];
-    [[[self window] contentView] addSubview:[homeTimelineVC view]];
 }
 
 @end

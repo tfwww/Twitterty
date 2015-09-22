@@ -163,6 +163,8 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     return cellView;
 }
 
+#pragma mark -
+
 - (NSImage *)getProfleImageInRow:(NSInteger)row {
     
     NSDictionary *tweetDictionary = [tweetData objectAtIndex:row];
