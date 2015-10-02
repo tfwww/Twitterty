@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "STTwitter.h"
-#import "HomeTweetCellView.h"
+#import "TweetCellView.h"
 #import "ReplyWindowController.h"
 
 extern NSString *const kConsumerKey;

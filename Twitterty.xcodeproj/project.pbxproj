@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A506CEF51BB3A0BD00388397 /* FavTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A506CEF31BB3A0BD00388397 /* FavTweetViewController.m */; };
+		A506CEF61BB3A0BD00388397 /* FavTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506CEF41BB3A0BD00388397 /* FavTweetViewController.xib */; };
 		A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */; };
 		A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */; };
 		A57E72781B9EF29000D9ACC5 /* ReplyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */; };
@@ -46,7 +48,13 @@
 		A5E7A3D71B8B189200CB8B7D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E7A3D61B8B189200CB8B7D /* Security.framework */; };
 		A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA39331B7AFE3A00279D1C /* ItemCell.m */; };
 		A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EA39361B7B36C200279D1C /* star-pushed.png */; };
-		A5EBE5521B954F1700D4A66E /* HomeTweetCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */; };
+		A5EAF3FA1BB635C4000758EA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EAF3F91BB635C4000758EA /* WebKit.framework */; };
+		A5EAF3FE1BB78875000758EA /* WebWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EAF3FC1BB78875000758EA /* WebWindowController.m */; };
+		A5EAF3FF1BB78875000758EA /* WebWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EAF3FD1BB78875000758EA /* WebWindowController.xib */; };
+		A5EB1CD41BB91A0800801BBB /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EB1CD31BB91A0800801BBB /* ApplicationServices.framework */; };
+		A5EBE5521B954F1700D4A66E /* TweetCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBE5511B954F1700D4A66E /* TweetCellView.m */; };
+		A5ED7DF61BB5528E0048302E /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5ED7DF41BB5528E0048302E /* PreferenceController.m */; };
+		A5ED7DF71BB5528E0048302E /* PreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5ED7DF51BB5528E0048302E /* PreferenceController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A506CEF21BB3A0BD00388397 /* FavTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavTweetViewController.h; sourceTree = "<group>"; };
+		A506CEF31BB3A0BD00388397 /* FavTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavTweetViewController.m; sourceTree = "<group>"; };
+		A506CEF41BB3A0BD00388397 /* FavTweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavTweetViewController.xib; sourceTree = "<group>"; };
 		A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTimelineViewController.h; sourceTree = "<group>"; };
 		A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTimelineViewController.m; sourceTree = "<group>"; };
 		A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTimelineViewController.xib; sourceTree = "<group>"; };
@@ -128,8 +139,16 @@
 		A5EA39331B7AFE3A00279D1C /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		A5EA39361B7B36C200279D1C /* star-pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-pushed.png"; sourceTree = "<group>"; };
 		A5EA73371B8B0AAB0096E29C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		A5EBE5501B954F1700D4A66E /* HomeTweetCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTweetCellView.h; sourceTree = "<group>"; };
-		A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTweetCellView.m; sourceTree = "<group>"; };
+		A5EAF3F91BB635C4000758EA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A5EAF3FB1BB78875000758EA /* WebWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebWindowController.h; sourceTree = "<group>"; };
+		A5EAF3FC1BB78875000758EA /* WebWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebWindowController.m; sourceTree = "<group>"; };
+		A5EAF3FD1BB78875000758EA /* WebWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebWindowController.xib; sourceTree = "<group>"; };
+		A5EB1CD31BB91A0800801BBB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		A5EBE5501B954F1700D4A66E /* TweetCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCellView.h; sourceTree = "<group>"; };
+		A5EBE5511B954F1700D4A66E /* TweetCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCellView.m; sourceTree = "<group>"; };
+		A5ED7DF31BB5528E0048302E /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		A5ED7DF41BB5528E0048302E /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		A5ED7DF51BB5528E0048302E /* PreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EB1CD41BB91A0800801BBB /* ApplicationServices.framework in Frameworks */,
+				A5EAF3FA1BB635C4000758EA /* WebKit.framework in Frameworks */,
 				A5E7A3D71B8B189200CB8B7D /* Security.framework in Frameworks */,
 				A5E7A3D51B8B188A00CB8B7D /* Social.framework in Frameworks */,
 				A5E7A3D31B8B188000CB8B7D /* Accounts.framework in Frameworks */,
@@ -191,8 +212,8 @@
 				A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */,
 				A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */,
 				A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */,
-				A5EBE5501B954F1700D4A66E /* HomeTweetCellView.h */,
-				A5EBE5511B954F1700D4A66E /* HomeTweetCellView.m */,
+				A5EBE5501B954F1700D4A66E /* TweetCellView.h */,
+				A5EBE5511B954F1700D4A66E /* TweetCellView.m */,
 				A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */,
 				A57E72751B9EF29000D9ACC5 /* ReplyWindowController.h */,
 				A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */,
@@ -200,6 +221,15 @@
 				A58EE7831BB10ECB002F67C8 /* MentionViewController.h */,
 				A58EE7841BB10ECB002F67C8 /* MentionViewController.m */,
 				A58EE7851BB10ECB002F67C8 /* MentionViewController.xib */,
+				A506CEF21BB3A0BD00388397 /* FavTweetViewController.h */,
+				A506CEF31BB3A0BD00388397 /* FavTweetViewController.m */,
+				A506CEF41BB3A0BD00388397 /* FavTweetViewController.xib */,
+				A5ED7DF31BB5528E0048302E /* PreferenceController.h */,
+				A5ED7DF41BB5528E0048302E /* PreferenceController.m */,
+				A5ED7DF51BB5528E0048302E /* PreferenceController.xib */,
+				A5EAF3FB1BB78875000758EA /* WebWindowController.h */,
+				A5EAF3FC1BB78875000758EA /* WebWindowController.m */,
+				A5EAF3FD1BB78875000758EA /* WebWindowController.xib */,
 				A5E7A3A21B8B17DA00CB8B7D /* STTwitter */,
 				A5379AE01B8318E50039862B /* SidebarView */,
 				A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */,
@@ -308,6 +338,8 @@
 		EB37D00EBA64C03F989A1EEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5EB1CD31BB91A0800801BBB /* ApplicationServices.framework */,
+				A5EAF3F91BB635C4000758EA /* WebKit.framework */,
 				A5E7A3D61B8B189200CB8B7D /* Security.framework */,
 				A5E7A3D41B8B188A00CB8B7D /* Social.framework */,
 				A5E7A3D11B8B184B00CB8B7D /* Accounts.framework */,
@@ -403,11 +435,14 @@
 				A58EE7871BB10ECB002F67C8 /* MentionViewController.xib in Resources */,
 				A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */,
 				A5E41A361B9C1DD9002B8931 /* reply.png in Resources */,
+				A506CEF61BB3A0BD00388397 /* FavTweetViewController.xib in Resources */,
 				A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */,
+				A5EAF3FF1BB78875000758EA /* WebWindowController.xib in Resources */,
 				A5E78B6D1B7CB26D00692252 /* trash-pushed.png in Resources */,
 				A57E72791B9EF29000D9ACC5 /* ReplyWindowController.xib in Resources */,
 				A5E63F601B801EC1001F701B /* star-pushed@2x.png in Resources */,
 				A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */,
+				A5ED7DF71BB5528E0048302E /* PreferenceController.xib in Resources */,
 				A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */,
 				A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */,
 				A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */,
@@ -440,15 +475,18 @@
 				A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */,
 				A5E7A3CA1B8B17DA00CB8B7D /* STTwitterOAuth.m in Sources */,
 				A5E7A3C91B8B17DA00CB8B7D /* STTwitterHTML.m in Sources */,
+				A5EAF3FE1BB78875000758EA /* WebWindowController.m in Sources */,
 				A59C7CBA1B79F20E00EE41D9 /* main.m in Sources */,
 				A5E7A3D01B8B17DA00CB8B7D /* STHTTPRequest.m in Sources */,
 				A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */,
 				A58EE7861BB10ECB002F67C8 /* MentionViewController.m in Sources */,
 				A5E7A3C31B8B17DA00CB8B7D /* NSDateFormatter+STTwitter.m in Sources */,
+				A506CEF51BB3A0BD00388397 /* FavTweetViewController.m in Sources */,
 				A5E7A3CF1B8B17DA00CB8B7D /* JSONSyntaxHighlight.m in Sources */,
 				A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */,
+				A5ED7DF61BB5528E0048302E /* PreferenceController.m in Sources */,
 				A5E7A3CD1B8B17DA00CB8B7D /* STTwitterStreamParser.m in Sources */,
-				A5EBE5521B954F1700D4A66E /* HomeTweetCellView.m in Sources */,
+				A5EBE5521B954F1700D4A66E /* TweetCellView.m in Sources */,
 				A57E72781B9EF29000D9ACC5 /* ReplyWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,11 +20,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="365" height="514"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="SpR-mg-j7N">
-                        <rect key="frame" x="1" y="17" width="238" height="117"/>
+                        <rect key="frame" x="1" y="17" width="363" height="496"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="165" rowSizeStyle="automatic" headerView="RtY-8J-HPe" viewBased="YES" id="g4Z-uq-8zb">
-                                <rect key="frame" x="0.0" y="0.0" width="366" height="0.0"/>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="165" rowSizeStyle="automatic" headerView="F1F-lP-6Gu" viewBased="YES" id="g4Z-uq-8zb">
+                                <rect key="frame" x="0.0" y="0.0" width="366" height="496"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -43,7 +43,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="tweetItem" id="2TK-Mm-wHZ" customClass="HomeTweetCellView">
+                                            <tableCellView identifier="tweetItem" id="2TK-Mm-wHZ" customClass="TweetCellView">
                                                 <rect key="frame" x="1" y="1" width="363" height="165"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -53,7 +53,7 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="R9B-iY-rqE"/>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" setsMaxLayoutWidthAtFirstLayout="YES" id="OV2-O0-hir">
-                                                        <rect key="frame" x="48" y="91" width="338" height="44"/>
+                                                        <rect key="frame" x="48" y="32" width="338" height="103"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" title="Table View Cell" id="7ky-01-UDx">
                                                             <font key="font" metaFont="system"/>
@@ -71,7 +71,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" id="5yi-S0-j3b">
-                                                        <rect key="frame" x="276" y="55" width="75" height="32"/>
+                                                        <rect key="frame" x="276" y="-4" width="75" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="push" title="Reply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BvD-un-CXq">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -108,8 +108,8 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="RtY-8J-HPe">
-                        <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
+                    <tableHeaderView key="headerView" id="F1F-lP-6Gu">
+                        <rect key="frame" x="0.0" y="0.0" width="10000" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 Wunmin. All rights reserved.
 //
 
-#import "HomeTweetCellView.h"
+#import "TweetCellView.h"
 #import "HomeTimelineViewController.h"
 
-@implementation HomeTweetCellView
+@implementation TweetCellView
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];

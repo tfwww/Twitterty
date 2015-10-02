@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ReplyWindowController.h"
 
-@interface HomeTweetCellView : NSTableCellView {
+@interface TweetCellView : NSTableCellView {
     
     ReplyWindowController *replyController;
     NSString *nameWithSymbol;

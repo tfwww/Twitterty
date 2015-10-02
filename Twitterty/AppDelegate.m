@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "STTwitter.h"
+#import "PreferenceController.h"
 
 @interface AppDelegate ()
 
@@ -24,10 +25,78 @@
     
     homeTimelineVC = [[HomeTimelineViewController alloc] initWithNibName:@"HomeTimelineViewController" bundle:nil];
     mentionVC = [[MentionViewController alloc] initWithNibName:@"MentionViewController" bundle:nil];
+    favVC = [[FavTweetViewController alloc] initWithNibName:@"FavTweetViewController" bundle:nil];
+    webViewWC = [[WebWindowController alloc] initWithWindowNibName:@"WebWindowController"];
+
 
     [self displayViewController:homeTimelineVC];
 
 }
+
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+    
+    NSAppleEventManager *appleEventManager = [NSAppleEventManager sharedAppleEventManager];
+    [appleEventManager setEventHandler:self
+                           andSelector:@selector(handleGetURLEvent:withReplyEvent:)
+                         forEventClass:kInternetEventClass
+                            andEventID:kAEGetURL];
+}
+
+//- (id)init {
+//    
+//    self = [super init];
+//    
+//    NSAppleEventManager *appleEventManager = [NSAppleEventManager sharedAppleEventManager];
+//    [appleEventManager setEventHandler:self
+//                           andSelector:@selector(handleGetURLEvent:withReplyEvent:)
+//                         forEventClass:kInternetEventClass
+//                            andEventID:kAEGetURL];
+//
+//    return self;
+//}
+
+#pragma mark - URL Scheme
+
+- (void)handleGetURLEvent:(NSAppleEventDescriptor *)event
+           withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+    
+    NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+//    NSString *urlStr = [[[[NSAppleEventManager sharedAppleEventManager] currentAppleEvent] paramDescriptorForKeyword:keyDirectObject] stringValue];
+//    NSLog(@"URL: %@", urlStr);
+    
+    NSDictionary *dict = [self parameterDictionaryFromURLString:urlStr];
+    
+    NSString *oauth = [dict objectForKey:@"oauth_token"];
+    NSString *verifier = [dict objectForKey:@"oauth_verifier"];
+    
+//    NSLog(@"oauth: %@", oauth);
+//    NSLog(@"verifier: %@", verifier);
+    
+    [preferenceController setOAuthToken:oauth oauthVerifier:verifier];
+    
+    // close the webView window
+    [webViewWC close];
+}
+
+- (NSDictionary *)parameterDictionaryFromURLString:(NSString *)urlString {
+    
+    NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionary];
+    NSArray *urlComponents = [urlString componentsSeparatedByString:@"?"];
+    NSArray *pairs = [[urlComponents lastObject] componentsSeparatedByString:@"&"];
+    
+    for (NSString *s in pairs) {
+        
+        NSArray *pair = [s componentsSeparatedByString:@"="];
+        NSString *key = pair[0];
+        NSString *value = pair[1];
+        
+        mutableDictionary[key] = value;
+    }
+    
+    return mutableDictionary;
+}
+
+#pragma mark -
 
 - (void)awakeFromNib {
     
@@ -56,6 +125,14 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+- (IBAction)showPreferencePanel:(id)sender {
+    
+    if (!preferenceController) {
+        preferenceController = [[PreferenceController alloc] initWithWindowNibName:@"PreferenceController"];
+    }
+    [preferenceController showWindow:self];
 }
 
 // triangle selection
@@ -105,9 +182,11 @@
 
 - (IBAction)watchClicked:(id)sender {
     
-    [label setStringValue:@"WATCH"];
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
+    
+    [self displayViewController:favVC];
+
 }
 
 - (IBAction)trashClicked:(id)sender {

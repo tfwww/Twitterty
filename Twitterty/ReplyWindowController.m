@@ -38,17 +38,17 @@
                                             consumerSecret:kConsuemrSecret
                                                 oauthToken:kOauthToken
                                           oauthTokenSecret:kOauthTokenSecret];
-    [twitterAPI getHomeTimelineSinceID:nil
-                              count:10
-                       successBlock:^(NSArray *statuses) {
-                           //NSLog(@"Statuses:%@", statuses);
-                           tweetsData = statuses;
-                           
-                           
-                       }
-                         errorBlock:^(NSError *error) {
-                             NSLog(@"Failed with error: %@", [error localizedDescription]);
-                         }];
+//    [twitterAPI getHomeTimelineSinceID:nil
+//                              count:10
+//                       successBlock:^(NSArray *statuses) {
+//                           //NSLog(@"Statuses:%@", statuses);
+//                           tweetsData = statuses;
+//                           
+//                           
+//                       }
+//                         errorBlock:^(NSError *error) {
+//                             NSLog(@"Failed with error: %@", [error localizedDescription]);
+//                         }];
     
 }
 

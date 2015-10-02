@@ -8,7 +8,7 @@
 
 #import "HomeTimelineViewController.h"
 #import "Sidebar.h"
-#import "HomeTweetCellView.h"
+#import "TweetCellView.h"
 #import "ReplyWindowController.h"
 
 NSString *const kConsumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
@@ -77,7 +77,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
 //                               NSLog(@"reply: %@", [replyController valueForKey:@"replyText"]);
                                
                                [[self tweetsTable] reloadData];
-                               [[self tweetsTable] selectedRow];
+//                               [[self tweetsTable] selectedRow];
                                
                            }
                              errorBlock:^(NSError *error) {
@@ -136,7 +136,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
     
-    HomeTweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+    TweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
     [[cellView textField] setStringValue:[[tweetData objectAtIndex:rowIndex] valueForKey:@"text"]];
     
     return cellView;
@@ -148,16 +148,16 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     
-    HomeTweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
+    TweetCellView *cellView = [[self tweetsTable] makeViewWithIdentifier:@"tweetItem" owner:self];
     
     if (cellView == nil) {
         
-        cellView = [[HomeTweetCellView alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
+        cellView = [[TweetCellView alloc] initWithFrame:NSMakeRect(0, 0, 20.0, 20.0)];
         [cellView setIdentifier:@"tweetItem"];
     }
     [[cellView textField] setStringValue:[[tweetData objectAtIndex:row] valueForKey:@"text"]];
     
-    [cellView.imageView setImage:[self getProfleImageInRow:row]];
+    [cellView.imageView setImage:[self getProfileImageInRow:row]];
     [[cellView screenNameLabel] setStringValue:[[tweetData objectAtIndex:row] valueForKeyPath:@"user.screen_name"]];
     
     return cellView;
@@ -165,7 +165,7 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
 
 #pragma mark -
 
-- (NSImage *)getProfleImageInRow:(NSInteger)row {
+- (NSImage *)getProfileImageInRow:(NSInteger)row {
     
     NSDictionary *tweetDictionary = [tweetData objectAtIndex:row];
     NSString *imageURLString = [tweetDictionary valueForKeyPath:@"user.profile_image_url"];
@@ -213,8 +213,8 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     [replyController showWindow:self];
 
     NSInteger row = [[self tweetsTable] rowForView:sender];
-    NSDictionary *tweetInRow = [tweetData objectAtIndex:row];
-    [replyController setValue:tweetInRow forKey:@"_tweetToReply"];
+//    NSDictionary *tweetInRow = [tweetData objectAtIndex:row];
+//    [replyController setValue:tweetInRow forKey:@"_tweetToReply"];
     
     NSString *screenName = [[tweetData objectAtIndex:row] valueForKeyPath:@"user.screen_name"];
     NSString *screenNameWithSymbol = [NSString stringWithFormat:@"@%@:", screenName];

@@ -7,7 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "STTwitter.h"
+#import "HomeTimelineViewController.h"
+#import "ReplyWindowController.h"
 
-@interface MentionViewController : NSViewController
+@interface MentionViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate> {
+    
+    STTwitterAPI *twitterAPI;
+    NSArray *mentionTweets;
+    ReplyWindowController *replyWC;
+    
+    __weak IBOutlet NSTableView *mentionTable;
+}
+- (IBAction)mentionTweetReply:(id)sender;
 
 @end

@@ -10,6 +10,9 @@
 #import "Sidebar.h"
 #import "HomeTimelineViewController.h"
 #import "MentionViewController.h"
+#import "FavTweetViewController.h"
+#import "PreferenceController.h"
+#import "WebWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     
@@ -18,7 +21,12 @@
     
     HomeTimelineViewController *homeTimelineVC;
     MentionViewController *mentionVC;
+    FavTweetViewController *favVC;
+    PreferenceController *preferenceController;
+    WebWindowController *webViewWC;
 }
+
+- (IBAction)showPreferencePanel:(id)sender;
 
 
 @end

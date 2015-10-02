@@ -11,7 +11,7 @@
 @interface ReplyWindowController : NSWindowController {
     
     NSArray *tweetsData;
-    NSDictionary *_tweetToReply;
+//    NSDictionary *_tweetToReply;
     IBOutlet __weak NSTextField *replyText;
     IBOutlet __weak NSTextField *replyName;
     
