@@ -9,7 +9,7 @@
 #import "ReplyWindowController.h"
 #import "HomeTimelineViewController.h"
 #import "STTwitterAPI.h"
-
+#import "SSKeychain.h"
 
 @interface ReplyWindowController () {
     
@@ -34,10 +34,15 @@
 //    
 //    [timelineVC changeReplyTextInRow];
     
+    NSArray *tokenServices = [SSKeychain accountsForService:kOauthTokenKeychainService];
+    NSArray *tokenSecretServices = [SSKeychain accountsForService:kOauthTokenSecretKeychainService];
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:tokenServices[0]];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:tokenSecretServices[0]];
+
     twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
                                             consumerSecret:kConsuemrSecret
-                                                oauthToken:kOauthToken
-                                          oauthTokenSecret:kOauthTokenSecret];
+                                                oauthToken:accessToken
+                                          oauthTokenSecret:accessTokenSecret];
 //    [twitterAPI getHomeTimelineSinceID:nil
 //                              count:10
 //                       successBlock:^(NSArray *statuses) {

@@ -13,8 +13,8 @@
 
 extern NSString *const kConsumerKey;
 extern NSString *const kConsuemrSecret;
-extern NSString *const kOauthToken;
-extern NSString *const kOauthTokenSecret;
+extern NSString *const kOauthTokenKeychainService;
+extern NSString *const kOauthTokenSecretKeychainService;
 
 @interface HomeTimelineViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate> {
     

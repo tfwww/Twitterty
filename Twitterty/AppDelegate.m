@@ -170,7 +170,6 @@
     
 //    [self wakeUpHomeTimelineView];
     [self displayViewController:homeTimelineVC];
-
 }
 
 - (IBAction)tagClicked:(id)sender {

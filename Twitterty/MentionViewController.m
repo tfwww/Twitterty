@@ -8,6 +8,9 @@
 
 #import "MentionViewController.h"
 #import "TweetCellView.h"
+#import "SSKeychain.h"
+#import "PreferenceController.h"
+#import "UserInfo.h"
 
 @interface MentionViewController ()
 
@@ -19,10 +22,22 @@
     [super viewDidLoad];
     // Do view setup here.
     
+    // Access the token in the keychain
+    // only allow one account in keychain, will support mult-accounts in the future
+    NSArray *tokenServices = [SSKeychain accountsForService:kOauthTokenKeychainService];
+    NSArray *tokenSecretServices = [SSKeychain accountsForService:kOauthTokenSecretKeychainService];
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:[tokenServices[0] objectForKey:@"acct"]];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:[tokenSecretServices[0] objectForKey:@"acct"]];
+    
     twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
                                                consumerSecret:kConsuemrSecret
-                                                   oauthToken:kOauthToken
-                                             oauthTokenSecret:kOauthTokenSecret];
+                                                   oauthToken:accessToken
+                                             oauthTokenSecret:accessTokenSecret];
+//
+//    twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+//                                               consumerSecret:kConsuemrSecret];
+    
     [twitterAPI getMentionsTimelineSinceID:nil
                                      count:10
                               successBlock:^(NSArray *statuses) {
@@ -34,6 +49,11 @@
                                 errorBlock:^(NSError *error) {
                                     NSLog(@"mentionError: %@", error);
                                 }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeHomeMentionTimeline:)
+                                                 name:kAccountChangedNotificaton
+                                               object:nil];
 
 }
 
@@ -98,5 +118,32 @@
     NSString *screenNameWithSymbol = [NSString stringWithFormat:@"@%@:", screenName];
     
     [[replyWC replyName] setStringValue:screenNameWithSymbol];
+}
+
+- (void)changeHomeMentionTimeline:(NSNotification *)notification {
+    
+    NSArray *users = [[notification userInfo] objectForKey:@"users"];
+    NSLog(@"notification: %@", ((UserInfo *)users[0]).screenName);
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:((UserInfo *)users[0]).screenName];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:((UserInfo *)users[0]).screenName];
+    
+    twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+                                            consumerSecret:kConsuemrSecret
+                                                oauthToken:accessToken
+                                          oauthTokenSecret:accessTokenSecret];
+    
+    [twitterAPI getMentionsTimelineSinceID:nil
+                                     count:10
+                              successBlock:^(NSArray *statuses) {
+                                  mentionTweets = statuses;
+                                  [mentionTable reloadData];
+                                  
+                                  //                                  NSLog(@"mention: %@", mentionTweets);
+                              }
+                                errorBlock:^(NSError *error) {
+                                    NSLog(@"mentionError: %@", error);
+                                }];
+
 }
 @end

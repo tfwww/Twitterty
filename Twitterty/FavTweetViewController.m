@@ -7,6 +7,9 @@
 //
 
 #import "FavTweetViewController.h"
+#import "SSKeychain.h"
+#import "PreferenceController.h"
+#import "UserInfo.h"
 
 @interface FavTweetViewController ()
 
@@ -18,10 +21,20 @@
     [super viewDidLoad];
     // Do view setup here.
     
+    // Access the token in the keychain
+    // only allow one account in keychain, will support mult-accounts in the future
+    NSArray *tokenServices = [SSKeychain accountsForService:kOauthTokenKeychainService];
+    NSArray *tokenSecretServices = [SSKeychain accountsForService:kOauthTokenSecretKeychainService];
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:[tokenServices[0] objectForKey:@"acct"]];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:[tokenSecretServices[0] objectForKey:@"acct"]];
+    
     twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
                                                consumerSecret:kConsuemrSecret
-                                                   oauthToken:kOauthToken
-                                             oauthTokenSecret:kOauthTokenSecret];
+                                                   oauthToken:accessToken
+                                             oauthTokenSecret:accessTokenSecret];
+    
+
     [twitterAPI getFavoritesListWithSuccessBlock:^(NSArray *statuses) {
                                                     favTweets = statuses;
 //                                                    NSLog(@"favTweets: %@", favTweets);
@@ -31,6 +44,33 @@
                                           
                                           NSLog(@"mentionError: %@", error);
                                       }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeFavTimeline:)
+                                                 name:kAccountChangedNotificaton
+                                               object:nil];
+}
+
+- (void)changeFavTimeline:(NSNotification *)notification {
+    
+    NSArray *users = [[notification userInfo] objectForKey:@"users"];
+    NSLog(@"notification: %@", ((UserInfo *)users[0]).screenName);
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:((UserInfo *)users[0]).screenName];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:((UserInfo *)users[0]).screenName];
+    
+    twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+                                            consumerSecret:kConsuemrSecret
+                                                oauthToken:accessToken
+                                          oauthTokenSecret:accessTokenSecret];
+    
+    [twitterAPI getFavoritesListWithSuccessBlock:^(NSArray *statuses) {
+                                                    favTweets = statuses;
+                                                    [favTable reloadData];
+                                                }
+                                      errorBlock:^(NSError *error) {
+                                                    NSLog(@"mentionError: %@", error);
+                                                }];
 }
 
 #pragma mark - Table View Data Source

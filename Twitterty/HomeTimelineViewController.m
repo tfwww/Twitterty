@@ -10,11 +10,14 @@
 #import "Sidebar.h"
 #import "TweetCellView.h"
 #import "ReplyWindowController.h"
+#import "SSKeychain.h"
+#import "PreferenceController.h"
+#import "UserInfo.h"
 
 NSString *const kConsumerKey = @"9cdFRYobskEMT2FcP0YZ5w2Zw";
 NSString *const kConsuemrSecret = @"KCa6WUcv8DCkB6mfMK3EBmd6aBX5DpTNajgneYgjVbJEw4bJYu";
-NSString *const kOauthToken = @"105745339-TujlsXUir2p8B8gEVNSgOev8cS3kHGEHQ4Sa1AR1";
-NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c";
+NSString *const kOauthTokenKeychainService = @"com.wunmin.twitter.AccessToken";
+NSString *const kOauthTokenSecretKeychainService = @"com.wunmin.twitter.AccessTokenSecret";
 
 @interface HomeTimelineViewController ()
 
@@ -31,15 +34,51 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     
 //    [self changeReplyTextInRow];
     //[self drawBorderWithColor:[NSColor whiteColor]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeHomeTimeline:)
+                                                 name:kAccountChangedNotificaton
+                                               object:nil];
 }
 
+//- (NSString *)changeAccountToken {
+//    
+//    // Access the token in the keychain
+//    // only allow one account in keychain, will support mult-accounts in the future
+//    NSArray *tokenServices = [SSKeychain accountsForService:kOauthTokenKeychainService];
+//    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:[tokenServices[0] objectForKey:@"acct"]];
+//    return accessToken;
+//}
+//
+//- (NSString *)changeAccountTokenSecret {
+//    
+//    NSArray *tokenSecretServices = [SSKeychain accountsForService:kOauthTokenSecretKeychainService];
+//    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:[tokenSecretServices[0] objectForKey:@"acct"]];
+//
+//    return accessTokenSecret;
+//}
+
 - (void)getHomeTimeline {
+    
+    // Access the token in the keychain
+    // only allow one account in keychain, will support mult-accounts in the future
+    NSArray *tokenServices = [SSKeychain accountsForService:kOauthTokenKeychainService];
+    NSArray *tokenSecretServices = [SSKeychain accountsForService:kOauthTokenSecretKeychainService];
+    
+//    NSLog(@"tokenServices: %@", [tokenServices[0] objectForKey:@"acct"]);
+//    NSLog(@"tokenSecretServices: %@", tokenSecretServices[0]);
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:[tokenServices[0] objectForKey:@"acct"]];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:[tokenSecretServices[0] objectForKey:@"acct"]];
+    
+//    NSLog(@"accessToken: %@", accessToken);
+//    NSLog(@"accessTokenSecret: %@", accessTokenSecret);
     
     // Get authentication from twitter
     twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
                                             consumerSecret:kConsuemrSecret
-                                                oauthToken:kOauthToken
-                                          oauthTokenSecret:kOauthTokenSecret];
+                                                oauthToken:accessToken
+                                          oauthTokenSecret:accessTokenSecret];
     
     [twitter verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {
         
@@ -220,6 +259,34 @@ NSString *const kOauthTokenSecret = @"7W2hfl7jl5QjY8LubOjBFOI5P2kmHr7OD2CmzMPV2c
     NSString *screenNameWithSymbol = [NSString stringWithFormat:@"@%@:", screenName];
     
     [[replyController replyName] setStringValue:screenNameWithSymbol];
+}
+
+#pragma mark - When the login account changes
+
+- (void)changeHomeTimeline:(NSNotification *)notification {
+    
+    NSArray *users = [[notification userInfo] objectForKey:@"users"];
+    NSLog(@"notification: %@", ((UserInfo *)users[0]).screenName);
+    
+    NSString *accessToken = [SSKeychain passwordForService:kOauthTokenKeychainService account:((UserInfo *)users[0]).screenName];
+    NSString *accessTokenSecret = [SSKeychain passwordForService:kOauthTokenSecretKeychainService account:((UserInfo *)users[0]).screenName];
+
+    twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:kConsumerKey
+                                            consumerSecret:kConsuemrSecret
+                                                oauthToken:accessToken
+                                          oauthTokenSecret:accessTokenSecret];
+
+    [twitter getHomeTimelineSinceID:nil
+                              count:10
+                       successBlock:^(NSArray *statuses) {
+                           tweetData = statuses;
+
+                           [[self tweetsTable] reloadData];
+                           
+                       }
+                         errorBlock:^(NSError *error) {
+                             NSLog(@"Failed with error: %@", [error localizedDescription]);
+                         }];
 }
 
 @end

@@ -11,6 +11,8 @@
 #import "HomeTimelineViewController.h"
 #import "WebWindowController.h"
 
+extern NSString *const kAccountChangedNotificaton;
+
 @interface PreferenceController : NSWindowController <NSCoding> {
     
     IBOutlet NSWindow *accountSheet;
@@ -21,7 +23,10 @@
     STTwitterAPI *twitter;
     WebWindowController *webViewWC;
     
+    NSMutableArray *users; // Store the user accounts
 }
+
+
 
 - (IBAction)loginWithOauth:(id)sender;
 

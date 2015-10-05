@@ -10,15 +10,14 @@
 #import "SSKeychain.h"
 #import "UserInfo.h"
 
-@interface PreferenceController () {
-    
-    NSMutableArray *users;
-    NSImage *imageForUser;
-}
+NSString *const kAccountChangedNotificaton = @"loginAccountChanged";
+
+@interface PreferenceController () 
 
 @end
 
 @implementation PreferenceController
+
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -28,7 +27,7 @@
     users = [NSKeyedUnarchiver unarchiveObjectWithData:usersAsData];
     
     [userTable reloadData];
-    NSLog(@"windowDidLoad users: %@", ((UserInfo *)users[0]).profileImage);
+//    NSLog(@"windowDidLoad users: %@", ((UserInfo *)users[0]).profileImage);
 
 }
 
@@ -97,6 +96,7 @@
                     errorBlock:^(NSError *error) {
 //                        NSLog(@"-- error: %@", error);
                     }];
+    
 }
 
 
@@ -157,15 +157,19 @@
                 [userDefaults setObject:usersAsData forKey:@"users"];
                 [userDefaults synchronize];
                 
-                NSLog(@"userDefaults: %@", [userDefaults objectForKey:@"users"]);
+                // post a notification that the account is changed
+                NSDictionary *notificationInfo = [NSDictionary dictionaryWithObject:users forKey:@"users"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kAccountChangedNotificaton object:self userInfo:notificationInfo];
+                
+//                NSLog(@"userDefaults: %@", [userDefaults objectForKey:@"users"]);
 
                 
-                NSLog(@"screenName: %@", users[0]);
+//                NSLog(@"screenName: %@", users[0]);
                 
                 // Store the token in keychain
                 //        [SSKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
-                [SSKeychain setPassword:twitter.oauthAccessToken forService:@"TwittertyAccessToken" account:@"com.twitterty.keychain"];
-                [SSKeychain setPassword:twitter.oauthAccessTokenSecret forService:@"TwittertyAccessTokenSecret" account:@"com.twitterty.keychain"];
+                [SSKeychain setPassword:twitter.oauthAccessToken forService:kOauthTokenKeychainService account:screenName];
+                [SSKeychain setPassword:twitter.oauthAccessTokenSecret forService:kOauthTokenSecretKeychainService account:screenName];
             
                 //        NSLog(@"SSKeychain oauthAccessToken: %@", [SSKeychain passwordForService:@"TwittertyAccessToken" account:@"com.twitterty.keychain"]);
             
@@ -178,7 +182,6 @@
             
                 NSLog(@"authenticate error: %@", error);
             }];
-
 }
 
 #pragma mark - Table View Data Source
