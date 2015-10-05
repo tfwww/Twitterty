@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Security/Security.h>
 #import "Sidebar.h"
 #import "HomeTimelineViewController.h"
 #import "MentionViewController.h"

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5040EE01BC107A8006E2DFC /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5040EDF1BC107A8006E2DFC /* UserInfo.m */; };
 		A506CEF51BB3A0BD00388397 /* FavTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A506CEF31BB3A0BD00388397 /* FavTweetViewController.m */; };
 		A506CEF61BB3A0BD00388397 /* FavTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506CEF41BB3A0BD00388397 /* FavTweetViewController.xib */; };
 		A50FCEEB1B8C104E004BA9AA /* HomeTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */; };
 		A50FCEEC1B8C104E004BA9AA /* HomeTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */; };
+		A5425F0B1BBFD07C00F2FAB5 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = A5425F081BBFD07C00F2FAB5 /* SSKeychain.m */; };
+		A5425F0C1BBFD07C00F2FAB5 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A5425F0A1BBFD07C00F2FAB5 /* SSKeychainQuery.m */; };
 		A57E72781B9EF29000D9ACC5 /* ReplyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */; };
 		A57E72791B9EF29000D9ACC5 /* ReplyWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E72771B9EF29000D9ACC5 /* ReplyWindowController.xib */; };
 		A58EE7861BB10ECB002F67C8 /* MentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A58EE7841BB10ECB002F67C8 /* MentionViewController.m */; };
@@ -68,12 +71,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5040EDE1BC107A8006E2DFC /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		A5040EDF1BC107A8006E2DFC /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		A506CEF21BB3A0BD00388397 /* FavTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavTweetViewController.h; sourceTree = "<group>"; };
 		A506CEF31BB3A0BD00388397 /* FavTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavTweetViewController.m; sourceTree = "<group>"; };
 		A506CEF41BB3A0BD00388397 /* FavTweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavTweetViewController.xib; sourceTree = "<group>"; };
 		A50FCEE81B8C104E004BA9AA /* HomeTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTimelineViewController.h; sourceTree = "<group>"; };
 		A50FCEE91B8C104E004BA9AA /* HomeTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTimelineViewController.m; sourceTree = "<group>"; };
 		A50FCEEA1B8C104E004BA9AA /* HomeTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTimelineViewController.xib; sourceTree = "<group>"; };
+		A5425F071BBFD07C00F2FAB5 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		A5425F081BBFD07C00F2FAB5 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		A5425F091BBFD07C00F2FAB5 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		A5425F0A1BBFD07C00F2FAB5 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		A57E72751B9EF29000D9ACC5 /* ReplyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyWindowController.h; sourceTree = "<group>"; };
 		A57E72761B9EF29000D9ACC5 /* ReplyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyWindowController.m; sourceTree = "<group>"; };
 		A57E72771B9EF29000D9ACC5 /* ReplyWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyWindowController.xib; sourceTree = "<group>"; };
@@ -185,6 +194,17 @@
 			name = SidebarView;
 			sourceTree = "<group>";
 		};
+		A5425F0D1BBFD08500F2FAB5 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				A5425F071BBFD07C00F2FAB5 /* SSKeychain.h */,
+				A5425F081BBFD07C00F2FAB5 /* SSKeychain.m */,
+				A5425F091BBFD07C00F2FAB5 /* SSKeychainQuery.h */,
+				A5425F0A1BBFD07C00F2FAB5 /* SSKeychainQuery.m */,
+			);
+			name = SSKeychain;
+			sourceTree = "<group>";
+		};
 		A59C7CA81B79F20E00EE41D9 = {
 			isa = PBXGroup;
 			children = (
@@ -227,9 +247,12 @@
 				A5ED7DF31BB5528E0048302E /* PreferenceController.h */,
 				A5ED7DF41BB5528E0048302E /* PreferenceController.m */,
 				A5ED7DF51BB5528E0048302E /* PreferenceController.xib */,
+				A5040EDE1BC107A8006E2DFC /* UserInfo.h */,
+				A5040EDF1BC107A8006E2DFC /* UserInfo.m */,
 				A5EAF3FB1BB78875000758EA /* WebWindowController.h */,
 				A5EAF3FC1BB78875000758EA /* WebWindowController.m */,
 				A5EAF3FD1BB78875000758EA /* WebWindowController.xib */,
+				A5425F0D1BBFD08500F2FAB5 /* SSKeychain */,
 				A5E7A3A21B8B17DA00CB8B7D /* STTwitter */,
 				A5379AE01B8318E50039862B /* SidebarView */,
 				A59C7CBB1B79F20E00EE41D9 /* Images.xcassets */,
@@ -468,10 +491,12 @@
 				A5E7A3C51B8B17DA00CB8B7D /* NSString+STTwitter.m in Sources */,
 				A5E7A3C71B8B17DA00CB8B7D /* STTwitterAPI.m in Sources */,
 				A5E7A3C61B8B17DA00CB8B7D /* STHTTPRequest+STTwitter.m in Sources */,
+				A5425F0B1BBFD07C00F2FAB5 /* SSKeychain.m in Sources */,
 				A5E7A3CE1B8B17DA00CB8B7D /* BAVPlistNode.m in Sources */,
 				A5E7A3C41B8B17DA00CB8B7D /* NSError+STTwitter.m in Sources */,
 				A5E7A3C81B8B17DA00CB8B7D /* STTwitterAppOnly.m in Sources */,
 				A5E7A3CC1B8B17DA00CB8B7D /* STTwitterOSRequest.m in Sources */,
+				A5425F0C1BBFD07C00F2FAB5 /* SSKeychainQuery.m in Sources */,
 				A5EA39341B7AFE3A00279D1C /* ItemCell.m in Sources */,
 				A5E7A3CA1B8B17DA00CB8B7D /* STTwitterOAuth.m in Sources */,
 				A5E7A3C91B8B17DA00CB8B7D /* STTwitterHTML.m in Sources */,
@@ -481,6 +506,7 @@
 				A59C7CB81B79F20E00EE41D9 /* AppDelegate.m in Sources */,
 				A58EE7861BB10ECB002F67C8 /* MentionViewController.m in Sources */,
 				A5E7A3C31B8B17DA00CB8B7D /* NSDateFormatter+STTwitter.m in Sources */,
+				A5040EE01BC107A8006E2DFC /* UserInfo.m in Sources */,
 				A506CEF51BB3A0BD00388397 /* FavTweetViewController.m in Sources */,
 				A5E7A3CF1B8B17DA00CB8B7D /* JSONSyntaxHighlight.m in Sources */,
 				A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */,

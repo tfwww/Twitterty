@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "STTwitter.h"
 #import "PreferenceController.h"
+#import "SSKeychain.h"
+#import "SSKeychainQuery.h"
 
 @interface AppDelegate ()
 

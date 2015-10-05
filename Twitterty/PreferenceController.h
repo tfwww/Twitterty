@@ -11,7 +11,7 @@
 #import "HomeTimelineViewController.h"
 #import "WebWindowController.h"
 
-@interface PreferenceController : NSWindowController {
+@interface PreferenceController : NSWindowController <NSCoding> {
     
     IBOutlet NSWindow *accountSheet;
     IBOutlet NSWindow *preferenceWindow;
@@ -23,7 +23,8 @@
     
 }
 
-- (IBAction)showAddingAccountPanel:(id)sender;
+- (IBAction)loginWithOauth:(id)sender;
+
 - (void)setOAuthToken:(NSString *)token oauthVerifier:(NSString *)verifier;
 
 @end
