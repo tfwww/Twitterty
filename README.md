@@ -1,19 +1,20 @@
 # Twitterty
 Learning how to develop Twitter client on Cocoa.
 
-2015.8.19
-The interface is done.
+Studied from the following sources:
 
-Studied from the following source:
+1. erndev/EDSidebar 
 
-1. erndev/EDSidebar
-
-  https://github.com/erndev/EDSidebar.git
+  <br>https://github.com/erndev/EDSidebar.git\<br>
 
 2. iluuu1994/ITSidebar
 
-  https://github.com/iluuu1994/ITSidebar.git
+  <br>https://github.com/iluuu1994/ITSidebar.git\<br>
 
 3. nst/STTwitter
 
-  https://github.com/nst/STTwitter.git
+  <br>https://github.com/nst/STTwitter.git\<br>
+  
+4. soffes/sskeychain
+
+<br>https://github.com/soffes/sskeychain.git\<br>
