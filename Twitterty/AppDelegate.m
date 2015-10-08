@@ -11,6 +11,7 @@
 #import "PreferenceController.h"
 #import "SSKeychain.h"
 #import "SSKeychainQuery.h"
+#import "PreferenceController.h"
 
 @interface AppDelegate ()
 
@@ -29,7 +30,8 @@
     mentionVC = [[MentionViewController alloc] initWithNibName:@"MentionViewController" bundle:nil];
     favVC = [[FavTweetViewController alloc] initWithNibName:@"FavTweetViewController" bundle:nil];
     webViewWC = [[WebWindowController alloc] initWithWindowNibName:@"WebWindowController"];
-
+    
+    
 
     [self displayViewController:homeTimelineVC];
 
@@ -74,7 +76,7 @@
 //    NSLog(@"oauth: %@", oauth);
 //    NSLog(@"verifier: %@", verifier);
     
-    [preferenceController setOAuthToken:oauth oauthVerifier:verifier];
+    [preferenceWC setOAuthToken:oauth oauthVerifier:verifier];
     
     // close the webView window
     [webViewWC close];
@@ -103,22 +105,22 @@
 - (void)awakeFromNib {
     
     // Add the cells with image
-    [theBar addButtonCellWithImage:[NSImage imageNamed:@"star-pushed"]
-                    alternateImage:[NSImage imageNamed:@"star-pushed"]
+    [theBar addButtonCellWithImage:[NSImage imageNamed:@"home"]
+                    alternateImage:[NSImage imageNamed:@"home"]
                             target:self
-                            action:@selector(starClicked:)];
-    [theBar addButtonCellWithImage:[NSImage imageNamed:@"tag"]
-                    alternateImage:[NSImage imageNamed:@"tag"]
+                            action:@selector(homeClicked:)];
+    [theBar addButtonCellWithImage:[NSImage imageNamed:@"reply"]
+                    alternateImage:[NSImage imageNamed:@"reply"]
                             target:self
-                            action:@selector(tagClicked:)];
-    [theBar addButtonCellWithImage:[NSImage imageNamed:@"watch-pushed"]
-                    alternateImage:[NSImage imageNamed:@"watch-pushed"]
+                            action:@selector(mentionClicked:)];
+    [theBar addButtonCellWithImage:[NSImage imageNamed:@"star"]
+                    alternateImage:[NSImage imageNamed:@"star"]
                             target:self
-                            action:@selector(watchClicked:)];
-    [theBar addButtonCellWithImage:[NSImage imageNamed:@"trash-pushed"]
-                    alternateImage:[NSImage imageNamed:@"trash-pushed"]
+                            action:@selector(favClicked:)];
+    [theBar addButtonCellWithImage:[NSImage imageNamed:@"more"]
+                    alternateImage:[NSImage imageNamed:@"more"]
                             target:self
-                            action:@selector(trashClicked:)];
+                            action:@selector(moreClicked:)];
     
     [theBar.itemsMatrix setState:NSOnState atRow:0 column:0];
     NSImage *selImage = [self buildTriangleSelection];
@@ -131,10 +133,10 @@
 
 - (IBAction)showPreferencePanel:(id)sender {
     
-    if (!preferenceController) {
-        preferenceController = [[PreferenceController alloc] initWithWindowNibName:@"PreferenceController"];
+    if (!preferenceWC) {
+        preferenceWC = [[PreferenceController alloc] initWithWindowNibName:@"PreferenceController"];
     }
-    [preferenceController showWindow:self];
+    [preferenceWC showWindow:self];
 }
 
 // triangle selection
@@ -163,16 +165,17 @@
 
 #pragma mark - Mouse Clicked Action
 
-- (IBAction)starClicked:(id)sender {
+- (IBAction)homeClicked:(id)sender {
     
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
     
 //    [self wakeUpHomeTimelineView];
     [self displayViewController:homeTimelineVC];
+    
 }
 
-- (IBAction)tagClicked:(id)sender {
+- (IBAction)mentionClicked:(id)sender {
     
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
@@ -181,20 +184,21 @@
     [self displayViewController:mentionVC];
 }
 
-- (IBAction)watchClicked:(id)sender {
+- (IBAction)favClicked:(id)sender {
     
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
     
     [self displayViewController:favVC];
-
 }
 
-- (IBAction)trashClicked:(id)sender {
+- (IBAction)moreClicked:(id)sender {
     
     [label setStringValue:@"TRASH"];
     NSImage *selImage = [self buildTriangleSelection];
     [theBar setSelectionImage:selImage];
+    
+    [self showPreferencePanel:sender];
 }
 
 //#pragma mark - Wake Up the Nibs
@@ -253,7 +257,6 @@
     tableViewRect.size.height = NSHeight(windowRect);
     [v setFrame:tableViewRect];
     [[[self window] contentView] addSubview:v];
-    
 }
 
 @end

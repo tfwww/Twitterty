@@ -24,7 +24,6 @@
 		A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59C7CBD1B79F20E00EE41D9 /* MainMenu.xib */; };
 		A59C7CCB1B79F20F00EE41D9 /* TwittertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CCA1B79F20F00EE41D9 /* TwittertyTests.m */; };
 		A59C7CD91B79F51F00EE41D9 /* Sidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = A59C7CD81B79F51F00EE41D9 /* Sidebar.m */; };
-		A5E41A361B9C1DD9002B8931 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E41A351B9C1DD9002B8931 /* reply.png */; };
 		A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F591B801E9D001F701B /* tag@2x.png */; };
 		A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */; };
 		A5E63F5E1B801EB7001F701B /* trash-pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */; };
@@ -58,6 +57,10 @@
 		A5EBE5521B954F1700D4A66E /* TweetCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBE5511B954F1700D4A66E /* TweetCellView.m */; };
 		A5ED7DF61BB5528E0048302E /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5ED7DF41BB5528E0048302E /* PreferenceController.m */; };
 		A5ED7DF71BB5528E0048302E /* PreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5ED7DF51BB5528E0048302E /* PreferenceController.xib */; };
+		A5FED26A1BC621C3000AC56F /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FED2691BC621C3000AC56F /* reply.png */; };
+		A5FED26C1BC62389000AC56F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FED26B1BC62389000AC56F /* star.png */; };
+		A5FED26E1BC66241000AC56F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FED26D1BC66241000AC56F /* home.png */; };
+		A5FED2721BC662B4000AC56F /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = A5FED2711BC662B4000AC56F /* more.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +105,6 @@
 		A59C7CD71B79F51F00EE41D9 /* Sidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sidebar.h; sourceTree = "<group>"; };
 		A59C7CD81B79F51F00EE41D9 /* Sidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sidebar.m; sourceTree = "<group>"; };
 		A5B2AF541B897D7700A341C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A5E41A351B9C1DD9002B8931 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 		A5E63F591B801E9D001F701B /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
 		A5E63F5B1B801EAD001F701B /* watch-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch-pushed@2x.png"; sourceTree = "<group>"; };
 		A5E63F5D1B801EB7001F701B /* trash-pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash-pushed@2x.png"; sourceTree = "<group>"; };
@@ -158,6 +160,10 @@
 		A5ED7DF31BB5528E0048302E /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
 		A5ED7DF41BB5528E0048302E /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
 		A5ED7DF51BB5528E0048302E /* PreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceController.xib; sourceTree = "<group>"; };
+		A5FED2691BC621C3000AC56F /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		A5FED26B1BC62389000AC56F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A5FED26D1BC66241000AC56F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		A5FED2711BC662B4000AC56F /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,7 +344,6 @@
 		A5E9DCC21B96A3F60081E69C /* ButtonsViewImage */ = {
 			isa = PBXGroup;
 			children = (
-				A5E41A351B9C1DD9002B8931 /* reply.png */,
 			);
 			name = ButtonsViewImage;
 			sourceTree = "<group>";
@@ -346,6 +351,10 @@
 		A5EA39391B7B36E800279D1C /* SidebarViewImage */ = {
 			isa = PBXGroup;
 			children = (
+				A5FED26D1BC66241000AC56F /* home.png */,
+				A5FED2691BC621C3000AC56F /* reply.png */,
+				A5FED26B1BC62389000AC56F /* star.png */,
+				A5FED2711BC662B4000AC56F /* more.png */,
 				A5E78B681B7CB26D00692252 /* tag.png */,
 				A5E63F591B801E9D001F701B /* tag@2x.png */,
 				A5E78B691B7CB26D00692252 /* watch-pushed.png */,
@@ -457,15 +466,18 @@
 				A5E78B6B1B7CB26D00692252 /* tag.png in Resources */,
 				A58EE7871BB10ECB002F67C8 /* MentionViewController.xib in Resources */,
 				A5E78B6C1B7CB26D00692252 /* watch-pushed.png in Resources */,
-				A5E41A361B9C1DD9002B8931 /* reply.png in Resources */,
 				A506CEF61BB3A0BD00388397 /* FavTweetViewController.xib in Resources */,
+				A5FED2721BC662B4000AC56F /* more.png in Resources */,
 				A59C7CBC1B79F20E00EE41D9 /* Images.xcassets in Resources */,
 				A5EAF3FF1BB78875000758EA /* WebWindowController.xib in Resources */,
 				A5E78B6D1B7CB26D00692252 /* trash-pushed.png in Resources */,
 				A57E72791B9EF29000D9ACC5 /* ReplyWindowController.xib in Resources */,
 				A5E63F601B801EC1001F701B /* star-pushed@2x.png in Resources */,
+				A5FED26C1BC62389000AC56F /* star.png in Resources */,
+				A5FED26E1BC66241000AC56F /* home.png in Resources */,
 				A5EA39381B7B36C200279D1C /* star-pushed.png in Resources */,
 				A5ED7DF71BB5528E0048302E /* PreferenceController.xib in Resources */,
+				A5FED26A1BC621C3000AC56F /* reply.png in Resources */,
 				A5E63F5C1B801EAD001F701B /* watch-pushed@2x.png in Resources */,
 				A59C7CBF1B79F20E00EE41D9 /* MainMenu.xib in Resources */,
 				A5E63F5A1B801E9D001F701B /* tag@2x.png in Resources */,

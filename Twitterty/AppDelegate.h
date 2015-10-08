@@ -23,7 +23,7 @@
     HomeTimelineViewController *homeTimelineVC;
     MentionViewController *mentionVC;
     FavTweetViewController *favVC;
-    PreferenceController *preferenceController;
+    PreferenceController *preferenceWC;
     WebWindowController *webViewWC;
 }
 
